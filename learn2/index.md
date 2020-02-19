@@ -12,3 +12,4 @@ A place to keep server notes. Yes, I know if the server is down I cannot get to 
 ## [Active Directory](Active%20Directory)
 * sssd.conf
 
+herllo

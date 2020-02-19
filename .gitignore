@@ -1,0 +1,25 @@
+# Linux
+*~
+*.swp
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Mac OS X
+.DS_Store
+._*
+
+# Composer
+/composer.phar
+/vendor
+themes/bit.code-workspace
+
+# Other stuff
+*.code-workspace
+/content-sample
+/pages
+/assets
+index.php
+*.backup
+
