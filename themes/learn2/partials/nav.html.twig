@@ -1,0 +1,85 @@
+<nav id="sidebar">
+      <div id="header-wrapper">
+          <div id="header">
+              <a id="logo" href="{{ base_url }}">  <p></p><div style="margin-bottom: -4rem;">&nbsp;</div><p></p>
+  {{ site_title}}
+  <p></p><div style="margin-top: -4rem;">&nbsp;</div><p></p>
+</a>
+    <div class="searchbox">
+      <label for="search-by"><i class="fa fa-search"></i></label>
+      <input id="search-by" type="text" placeholder="Search Documentation" data-search-input="/search.json/query">
+      <span data-search-clear=""><i class="fa fa-close"></i></span>
+  </div>
+          </div>
+      </div>
+      
+
+<div class="scroll-wrapper scrollbar-inner" style="position: relative;"><div class="scrollbar-inner scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 554px;">
+    <div class="highlightable" style="height: 554px;">
+
+{% macro menu(items,current_page,base_url) %}
+  <ul class="topics">
+  {% for name,item in items %}
+    
+    {% set classes = null %}
+    {# is this the current page? #}
+    {% if item.url  ==  current_page.url  %}
+        {% set classes = classes ~ " active" %}
+    {% endif %}
+    {% if (current_page.url starts with item.url ) and (current_page.url  != base_url) %}
+        {% set classes = classes ~ " parent" %}
+    {% endif %}
+    <li class="dd-item {{ classes }}" data-nav-id="{{ item.url }}">
+      {% if item.url %} 
+        <a href="{{ item.url }}">
+            <i class="fa fa-check read-icon"></i>
+            <span>{{ item.title }}</a></span>
+      {% else %}
+        <span>{{ name }}</span>
+      {% endif %}
+      {% if item._childs %}
+        {% import _self as macros %}
+        {{ macros.menu(item._childs,current_page,base_url) }}
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+{% endmacro %}
+
+{% import _self as macros %}
+{% if current_page.url starts with "docs" | link %}
+  {{ macros.menu(nested_pages | only('docs'),current_page,"docs" | link) }}
+{% else %}
+    <ul class="topics">
+        <li class="dd-item" data-nav-id="{{ "docs" | link }}">
+          <a href="{{ "docs" | link }}">
+            <i class="fa fa-check read-icon"></i>
+            <span>{{ "docs/index" | title }}</span>
+          </a>
+      </li>
+    </ul>
+{% endif %}
+{% if current_page.url starts with "blog" | link %}
+  {{ macros.menu(nested_pages | only('blog'),current_page,"blog" | link) }}
+{% else %}
+    <ul class="topics">
+        <li class="dd-item" data-nav-id="{{ "blog" | link }}">
+          <a href="{{"blog" |link }} ">
+            <i class="fa fa-check read-icon"></i>
+            <span>Blog</span>
+          </a>
+      </li>
+    </ul>
+{% endif %}
+<hr>
+
+        <a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a><br>
+
+        <section id="footer">
+                          <a class="button" href="/feed.atom"><i class="fa fa-rss-square"></i> Atom 1.0</a>
+              <a class="button" href="/feed.rss"><i class="fa fa-rss-square"></i> RSS</a><br><br>
+                        <p>Built with <a href="http://getgrav.org">Grav</a> - The Modern Flat File CMS</p>
+        </section>
+    </div>
+</div><div class="scroll-element scroll-x scroll-scrolly_visible"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="width: 88px;"></div></div></div><div class="scroll-element scroll-y scroll-scrolly_visible"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="height: 499px; top: 0px;"></div></div></div></div>
+  </nav>

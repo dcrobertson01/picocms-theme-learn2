@@ -1,0 +1,19 @@
+
+{% set template = meta.template %}
+<section id="body" class="{{meta.template}}">
+    <div class="padding highlightable">
+        {% block content %}
+            {% if template == "blog" %}
+                {% include "partials/content.blog.html.twig" %}
+            {% elseif template == "blog-item" %}
+                {% include "partials/content.blog-item.html.twig" %}
+            {% elseif template == "doc" %}
+                {% include "partials/content.doc.html.twig" %}
+            {% elseif template == "chapter" %}
+                {% include "partials/content.chapter.html.twig" %}
+            {% else %}
+                {{ content }}
+            {% endif %}
+        {% endblock %}
+    </div>
+</body>

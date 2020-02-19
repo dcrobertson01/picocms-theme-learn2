@@ -1,0 +1,39 @@
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if site_title %}{{ site_title }} | {% endif %}{{ meta.title }}</title>
+    <meta name="generator" content="CMSPico" />
+    {% if meta.description %}
+        {% set description = meta.description %}
+    {% elseif config.description %}
+        {% set description = config.description %}
+    {% else %}
+        {% set description = site_title %}
+    {% endif %}
+    <meta name="description" content="{{ description }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+
+     <link href="{{ theme_url}}/css-compiled/nucleus.css" type="text/css" rel="stylesheet">
+     <link href="{{ theme_url}}/css-compiled/theme.css" type="text/css" rel="stylesheet">
+     {% for stylesheet in config.theme_config.stylesheets %}
+         <link href="{{ theme_url}}/css/{{ stylesheet }}" type="text/css" rel="stylesheet">
+     {% endfor %}
+     <style>
+.presentation-iframe {
+            width: 100%;
+            width: -moz-available;
+            width: -webkit-fill-available;
+            width: fill-available;
+            height: 100%;
+            height: -moz-available;
+            height: -webkit-fill-available;
+            height: fill-available;
+          }
+</style>
+     {% for javascript in config.theme_config.javascripts %}
+         <script src="{{ theme_url}}/js/{{ javascript }}"></script>
+     {% endfor %}
+<script>
+hljs.initHighlightingOnLoad();
+</script>
+
+{% endblock %}

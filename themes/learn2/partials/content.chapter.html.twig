@@ -1,0 +1,25 @@
+{% block content %}
+<div class="chapter_no">Chapter {{ meta.Chapter }}</div>
+<div class="title">{{ meta.title }}</div>
+{{content}}
+{% macro menu(items) %}
+  <dl>
+  {% for name,item in items %}
+    <dt>
+      {% if item.url %}
+        <a href="{{ item.url }}">{{ item.title }}</a> 
+      {% else %}
+        <span>{{ name }}</span>
+      {% endif %}
+    </dt>
+    <dd>
+        {{ item.description }}
+    </dd>
+  {% endfor %}
+  </dl>
+{% endmacro %}
+
+{% import _self as macros %}
+<hr>
+{{ macros.menu(nested_pages | only( current_page.id | split('/',-1)| join('/')~"/" )) }}
+{% endblock %}

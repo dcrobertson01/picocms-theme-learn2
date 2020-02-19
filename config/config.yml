@@ -1,0 +1,8 @@
+theme: learn2
+content_dir: learn2
+site_title: Learn2 Theme ported to Pico 
+content_config:
+    extra: true
+
+date_format: %A, %B %e %Y
+description: New theme for PicoCMS - made for cms_pico
