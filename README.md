@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Pico
 ====
 
@@ -32,3 +33,7 @@ Please refer to the ["Contributing" section][MainRepoContributing] of our main r
 [MainRepoUpgrade]: https://github.com/picocms/Pico#upgrade
 [MainRepoGettingHelp]: https://github.com/picocms/Pico#getting-help
 [MainRepoContributing]: https://github.com/picocms/Pico#contributing
+=======
+# picocms-theme-learn2
+Version on the GravCMS theme Learn2 for PicoCMS
+>>>>>>> 2c94062202a463b1025fe0040936653186cebf92
