@@ -1,6 +1,4 @@
----
-title: Read Me
----
+
 [![License](https://picocms.github.io/badges/pico-license.svg)](https://github.com/picocms/pico-composer/blob/master/LICENSE)
 
 ## Title: Learn2 Documentation
