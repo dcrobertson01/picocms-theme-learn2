@@ -11,6 +11,8 @@
                 {% include "partials/content.doc.html.twig" %}
             {% elseif template == "chapter" %}
                 {% include "partials/content.chapter.html.twig" %}
+            {% elseif template == "search" %}
+                {% include "partials/content.searchresults.html.twig" %}
             {% else %}
                 {{ content }}
             {% endif %}
