@@ -1,15 +1,17 @@
 <nav id="sidebar">
       <div id="header-wrapper">
           <div id="header">
-              <a id="logo" href="{{ base_url }}">  <p></p><div style="margin-bottom: -4rem;">&nbsp;</div><p></p>
-  {{ site_title}}
-  <p></p><div style="margin-top: -4rem;">&nbsp;</div><p></p>
-</a>
-    <div class="searchbox">
-      <label for="search-by"><i class="fa fa-search"></i></label>
-      <input id="search-by" type="text" placeholder="Search Documentation" data-search-input="/search.json/query">
-      <span data-search-clear=""><i class="fa fa-close"></i></span>
-  </div>
+              <a id="logo" href="{{ base_url }}">
+                <p></p>
+                <div style="margin-bottom: -4rem;">&nbsp;</div>
+                <p></p>
+                {{ site_title}}
+                <p></p>
+                <div style="margin-top: -4rem;">&nbsp;</div>
+                <p></p>
+              </a>
+              helo
+              {% include 'partials/search.html.twig' %}
           </div>
       </div>
       
