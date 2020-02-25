@@ -24,8 +24,8 @@
 .searchbox {
     margin-top: 0.5rem;
     position: relative;
-
-    border: 1px solid diminish($header-bg, 5%);
+    padding:0 .5rem;
+    border: 1px solid darken($header-bg, 5%);
     background: amplify($header-bg, 5%);
     border-radius: 4px;
 
@@ -53,14 +53,24 @@
         color: contrast-color(amplify($header-bg, 5%), $white);
         width: 100%;
         height: 30px;
-        background: transparent;
+        background:rgba($white, 0.6);
         border: 0;
-        padding: 0 25px 0 30px;
+        padding: 0 25px 0 10px;
         margin: 0;
         font-weight: $font-weight-regular;
 
         @include placeholder {
             color: contrast-color(diminish($header-bg, 5%), $white);
+        }
+    }
+
+    button{
+        position: absolute;
+        right: 0.1em;
+        background:transparent;
+
+        i {
+            color:$header-bg;
         }
     }
 }

@@ -1,21 +1,22 @@
+<a class="off-canvas-toggle btn btn-primary btn-action" href="#sidebar-id">
+            <i class="fa fa-bars"></i>
+        </a>
 <nav id="sidebar">
       <div id="header-wrapper">
           <div id="header">
               <a id="logo" href="{{ base_url }}">
-                <p></p>
-                <div style="margin-bottom: -4rem;">&nbsp;</div>
-                <p></p>
+                {% if config.logo %}
+                  <img src="{{ assets_url}}/{{ config.logo }}" />
+                {% endif %}
+                
                 {{ site_title}}
-                <p></p>
-                <div style="margin-top: -4rem;">&nbsp;</div>
-                <p></p>
               </a>
               {% include 'partials/search.html.twig' %}
           </div>
       </div>
       
 
-<div class="scroll-wrapper scrollbar-inner" style="position: relative;"><div class="scrollbar-inner scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 554px;">
+<div class="" style="position: relative;"><div class="scrollbar-inner scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 554px;">
     <div class="highlightable" style="height: 554px;">
 
 {% macro menu(items,current_page,base_url) %}

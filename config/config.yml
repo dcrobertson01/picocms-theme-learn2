@@ -6,3 +6,4 @@ content_config:
 
 date_format: %A, %B %e %Y
 description: New theme for PicoCMS - made for cms_pico
+logo: logo.svg

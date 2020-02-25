@@ -102,7 +102,8 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
 .searchbox {
   margin-top: 0.5rem;
   position: relative;
-  border: 1px solid diminish(#1694CA, 5%);
+  padding: 0 0.5rem;
+  border: 1px solid #1383b3;
   background: amplify(#1694CA, 5%);
   border-radius: 4px;
 }
@@ -127,9 +128,9 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   color: contrast-color(amplify(#1694CA, 5%), #fff);
   width: 100%;
   height: 30px;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.6);
   border: 0;
-  padding: 0 25px 0 30px;
+  padding: 0 25px 0 10px;
   margin: 0;
   font-weight: 400;
 }
@@ -144,6 +145,14 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
 }
 .searchbox input:-ms-input-placeholder {
   color: contrast-color(diminish(#1694CA, 5%), #fff);
+}
+.searchbox button {
+  position: absolute;
+  right: 0.1em;
+  background: transparent;
+}
+.searchbox button i {
+  color: #1694CA;
 }
 
 #sidebar-toggle {
@@ -166,20 +175,26 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   font-size: 15px;
   border-right: 1px solid diminish(#38424D, 7%);
 }
-#sidebar a,
-#sidebar i {
+#sidebar a {
   color: #cccccc;
 }
-#sidebar a:hover,
-#sidebar i:hover {
+#sidebar a:hover {
   color: amplify(contrast-color(#38424D, #cccccc), 5%);
 }
-#sidebar a.subtitle,
+#sidebar a.subtitle {
+  color: rgba(204, 204, 204, 0.6);
+}
+#sidebar i:hover {
+  color: #19a8e6;
+}
+#sidebar i:active {
+  color: #f9c16d;
+}
 #sidebar i.subtitle {
   color: rgba(204, 204, 204, 0.6);
 }
 #sidebar hr {
-  border-bottom: 1px solid amplify(#38424D, 3%);
+  border-bottom: 1px solid white;
 }
 #sidebar a.padding {
   padding: 0 1rem;
@@ -201,13 +216,7 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   margin-right: 0;
   padding-left: 1rem;
   padding-right: 1rem;
-}
-#sidebar #header i {
-  color: rgba(204, 204, 204, 0.6);
-  position: absolute;
-  right: 0.6rem;
-  top: 0.7rem;
-  font-size: 80%;
+  line-height: 1;
 }
 #sidebar #header.parent a {
   background: amplify(#38424D, 7%);

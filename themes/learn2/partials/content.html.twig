@@ -1,5 +1,8 @@
 
 {% set template = meta.template %}
+{% block topbar %}
+    {% include "partials/topbar.html.twig" %}
+{% endblock %}
 <section id="body" class="{{meta.template}}">
     <div class="padding highlightable">
         {% block content %}

@@ -19,8 +19,7 @@
     font-size: 15px;
     border-right: 1px solid diminish($sidebar-bg, 7%);
     
-    a,
-    i {
+    a{
         color: $sidebar-link;
         &:hover {
             color: amplify(contrast-color($sidebar-bg, $sidebar-link), 5%);
@@ -29,9 +28,21 @@
             color: rgba($sidebar-link, 0.6);
         }
     }
+    i {
+        &:hover {
+            color: $sidebar-hover;
+        }
+        &:active {
+            color: $sidebar-active;
+        }
+        &.subtitle {
+            color: rgba($sidebar-link, 0.6);
+        }
+
+    }
 
     hr {
-        border-bottom: 1px solid amplify($sidebar-bg, 3%);
+        border-bottom: 1px solid lighten($sidebar-bg, 90%);
     }
 
     a.padding {
@@ -54,15 +65,9 @@
             margin-right: 0;
             padding-left: 1rem;
             padding-right: 1rem;
+            line-height: 1;
         }
 
-        i {
-            color: rgba($sidebar-link, 0.6);
-            position: absolute;
-            right: 0.6rem;
-            top: 0.7rem;
-            font-size: 80%;
-        }
 
         &.parent {
             a {
