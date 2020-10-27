@@ -1,0 +1,17 @@
+{% block search %}
+    <div class="searchbox">
+        <form id="search_form" action="{{ "search"|link }}">
+            <label for="search_input"></label>
+            <input type="search" id="search_input" name="q" value="{{ search_terms|e('html_attr') }}" />
+            <button id="search-form-submit" type="submit" value="Search" ><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+<script type="text/javascript">
+// Intercept form submit and go to the search results page directly, avoiding a redirect
+document.getElementById('search_form').addEventListener('submit', function (e) {
+var search_terms = document.getElementById('search_input').value;
+location.href = '{{ "search"|link }}/' + encodeURIComponent(search_terms);
+e.preventDefault();
+});
+</script>
+{% endblock %}
