@@ -1,18 +1,19 @@
-{% block content %}
-    {% if search_terms %}
-    <div class="SearchResults">
-        {% set search_results = pages|apply_search %}
-        {% if search_results %}
-            <h2>Search results for {{ search_terms|e('html') }}</h2>
-            {% for page in search_results %}
-                <div class="SearchResult">
-                    <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
-                    {% if page.description %}<p>{{ page.description }}</p>{% endif %}
-                </div>
-            {% endfor %}
-        {% else %}
-            <p>No results found for {{ search_terms|e('html') }}.</p>
+    <div class="post">
+        {% if search_terms %}
+        <div class="SearchResults">
+            {% set search_results = pages|apply_search %}
+            {% if search_results %}
+                <h2>Search results for <em>{{ search_terms|e('html') }}</em></h2>
+                {% for page in search_results %}
+                    <div class="SearchResult">
+                        <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+                        {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <h2>Search Results</h2>
+                <p>No results found for {{ search_terms|e('html') }}.</p>
+            {% endif %}
+        </div>
         {% endif %}
     </div>
-    {% endif %}
-{% endblock %}

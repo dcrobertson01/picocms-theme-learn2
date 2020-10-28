@@ -1,32 +1,14 @@
 body {
 	background: $page-bg;
 	color: $core-text;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-	color: contrast-color($page-bg, $core-text);
-
-	&:link,
-	&:visited {
-		color: contrast-color($page-bg, $core-text);
-	}
-
-	&:hover,
-	&:active {
-		color: amplify(contrast-color($page-bg, $core-text), 5%);
-	}
-}
-
-#body-inner {
-	a {
-		text-decoration: underline;
-		text-decoration-style: dotted;
-
-		&:hover {
-			text-decoration-style: solid;
-		}
+	color: $core-accent;
+	&:hover {
+		color: darken($core-accent, 15%);
 	}
 }
 
@@ -39,11 +21,10 @@ pre {
 	border: 1px solid $body-border;
 }
 
-b,
-strong {
-	font-weight: $font-weight-bold
+b, strong {
+    font-weight: $font-weight-bold
 }
 
 .default-animation {
-	@include transition(all 0.5s ease);
+    @include transition(all 0.5s ease);
 }

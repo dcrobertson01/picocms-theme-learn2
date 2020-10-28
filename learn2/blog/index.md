@@ -1,11 +1,10 @@
 ---
 Title: Blog
-Subtitle: The project blog
-Author: Don 
-Description: Pico is a stupidly simple, blazing fast, flat file CMS.
-Placing: 1
-Template: blog
+Description: This is the blog section of the documentation. It can be used to keep people informed of new documentation or changes and inprovements to the documentation.
+Author: Joe Bloggs
+Date: 2001-04-25
+Robots: noindex,nofollow
+Template: blog-index
 ---
-
-THe Blog
-dfngl
+# %meta.title%
+%meta.description%

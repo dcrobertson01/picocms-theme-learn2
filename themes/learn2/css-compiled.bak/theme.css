@@ -26,10 +26,21 @@ body {
 }
 
 a {
-  color: #1694CA;
+  color: contrast-color(#fff, #555);
 }
-a:hover {
-  color: #0e6185;
+a:link, a:visited {
+  color: contrast-color(#fff, #555);
+}
+a:hover, a:active {
+  color: amplify(contrast-color(#fff, #555), 5%);
+}
+
+#body-inner a {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+#body-inner a:hover {
+  text-decoration-style: solid;
 }
 
 pre {
@@ -41,7 +52,10 @@ pre {
   border: 1px solid #eaeaea;
 }
 
-b, strong, th, label {
+b,
+strong,
+th,
+label {
   font-weight: 600;
 }
 
@@ -70,7 +84,7 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
 
 #header {
   background: #1694CA;
-  color: #fff;
+  color: contrast-color(#1694CA, #fff);
   text-align: center;
   padding: 1rem;
 }
@@ -88,8 +102,9 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
 .searchbox {
   margin-top: 0.5rem;
   position: relative;
-  border: 1px solid #19a5e1;
-  background: #1383b3;
+  padding: 0 0.5rem;
+  border: 1px solid #1383b3;
+  background: amplify(#1694CA, 5%);
   border-radius: 4px;
 }
 .searchbox label {
@@ -110,26 +125,26 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
 }
 .searchbox input {
   display: inline-block;
-  color: #fff;
+  color: contrast-color(amplify(#1694CA, 5%), #fff);
   width: 100%;
   height: 30px;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.6);
   border: 0;
-  padding: 0 25px 0 30px;
+  padding: 0 25px 0 10px;
   margin: 0;
   font-weight: 400;
 }
 .searchbox input::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: contrast-color(diminish(#1694CA, 5%), #fff);
 }
 .searchbox input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: contrast-color(diminish(#1694CA, 5%), #fff);
 }
 .searchbox input:-moz-placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: contrast-color(diminish(#1694CA, 5%), #fff);
 }
 .searchbox input:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: contrast-color(diminish(#1694CA, 5%), #fff);
 }
 .searchbox button {
   position: absolute;
@@ -137,7 +152,7 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   background: transparent;
 }
 .searchbox button i {
-  color: #aaa;
+  color: #1694CA;
 }
 
 #sidebar-toggle {
@@ -158,50 +173,60 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   left: 0;
   font-weight: 500;
   font-size: 15px;
+  border-right: 1px solid diminish(#38424D, 7%);
 }
 #sidebar a {
-  color: #bbbbbb;
+  color: #cccccc;
 }
 #sidebar a:hover {
-  color: #d5d5d5;
+  color: amplify(contrast-color(#38424D, #cccccc), 5%);
 }
 #sidebar a.subtitle {
-  color: rgba(187, 187, 187, 0.6);
+  color: rgba(204, 204, 204, 0.6);
+}
+#sidebar i:hover {
+  color: #19a8e6;
+}
+#sidebar i:active {
+  color: #f9c16d;
+}
+#sidebar i.subtitle {
+  color: rgba(204, 204, 204, 0.6);
 }
 #sidebar hr {
-  border-bottom: 1px solid #323a44;
+  border-bottom: 1px solid white;
 }
 #sidebar a.padding {
   padding: 0 1rem;
 }
-#sidebar h5 {
-  margin: 2rem 0 0;
+#sidebar #header {
+  margin: 0;
+  padding: 0.5rem 0;
   position: relative;
   line-height: 2;
+  font-family: "Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0px;
+  font-size: 1.4rem;
 }
-#sidebar h5 a {
+#sidebar #header a {
   display: block;
   margin-left: 0;
   margin-right: 0;
   padding-left: 1rem;
   padding-right: 1rem;
+  line-height: 1;
 }
-#sidebar h5 i {
-  color: rgba(187, 187, 187, 0.6);
-  position: absolute;
-  right: 0.6rem;
-  top: 0.7rem;
-  font-size: 80%;
+#sidebar #header.parent a {
+  background: amplify(#38424D, 7%);
+  color: amplify(#cccccc, 5%) !important;
 }
-#sidebar h5.parent a {
-  background: #293038;
-  color: #c8c8c8 !important;
-}
-#sidebar h5.active a {
+#sidebar #header.active a {
   background: #fff;
   color: #555 !important;
 }
-#sidebar h5.active i {
+#sidebar #header.active i {
   color: #555 !important;
 }
 #sidebar h5 + ul.topics {
@@ -217,18 +242,18 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   margin: 0;
 }
 #sidebar ul.searched a {
-  color: #888888;
+  color: amplify(#cccccc, 20%);
 }
 #sidebar ul.searched .search-match a {
-  color: #d5d5d5;
+  color: amplify(#cccccc, 10%);
 }
 #sidebar ul.searched .search-match a:hover {
-  color: #eeeeee;
+  color: amplify(#cccccc, 20%);
 }
 #sidebar ul.topics {
-  margin: 0 1rem;
+  margin: 0 0 0 1rem;
 }
-#sidebar ul.topics.searched ul {
+wtf #sidebar ul.topics.searched ul {
   display: block;
 }
 #sidebar ul.topics ul {
@@ -238,7 +263,7 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   display: none;
   padding-bottom: 0;
 }
-#sidebar ul.topics li.parent ul, #sidebar ul.topics > li.active ul {
+#sidebar ul.topics li.parent li.parent ul, #sidebar ul.topics > li {
   display: block;
 }
 #sidebar ul.topics > li > a {
@@ -246,18 +271,21 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   font-size: 1.1rem;
 }
 #sidebar ul.topics > li > a b {
-  opacity: 0.5;
+  color: #cccccc;
   font-weight: normal;
 }
 #sidebar ul.topics > li > a .fa {
   margin-top: 9px;
 }
 #sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
-  background: #2d353e;
+  background: amplify(#38424D, 5%);
   margin-left: -1rem;
   margin-right: -1rem;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+#sidebar ul.topics > li.parent > a b, #sidebar ul.topics > li.active > a b {
+  color: #cccccc;
 }
 #sidebar ul li.active > a {
   background: #fff;
@@ -267,8 +295,12 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   padding-left: 1rem;
   padding-right: 1rem;
 }
+#sidebar ul li.active > a b {
+  color: #555 !important;
+}
 #sidebar ul li {
   padding: 0;
+  display: block;
 }
 #sidebar ul li.visited + span {
   margin-right: 16px;
@@ -299,8 +331,14 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   display: inline;
 }
 #sidebar ul li li {
-  padding-left: 1rem;
   text-indent: 0.2rem;
+}
+
+#body #navigation .nav .fa {
+  color: amplify(contrast-color(#fff, #38424D), 15%);
+}
+#body #navigation .nav .fa:active, #body #navigation .nav .fa:focus, #body #navigation .nav .fa:hover, #body #navigation .nav .fa:visited {
+  color: contrast-color(#fff, #38424D);
 }
 
 #main {
@@ -359,7 +397,7 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   top: 0;
   bottom: 0;
   width: 4rem;
-  font-size: 50px;
+  font-size: 0;
   height: 100%;
   cursor: pointer;
   display: table;
@@ -384,6 +422,9 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
   #body .nav > i {
     display: inline-block;
   }
+}
+#body .nav i {
+  font-size: 50px;
 }
 #body .nav:hover {
   background: #F6F6F6;
@@ -426,7 +467,7 @@ textarea:focus, input[type=email]:focus, input[type=number]:focus, input[type=pa
 
 #footer {
   padding: 3rem 1rem;
-  color: #a2a2a2;
+  color: #b3b3b3;
   font-size: 13px;
 }
 #footer p {
@@ -465,12 +506,12 @@ blockquote {
 }
 blockquote p {
   font-size: 1.1rem;
-  color: #999;
+  color: contrast-color(#fff, #999999);
 }
 blockquote cite {
   display: block;
   text-align: right;
-  color: #666;
+  color: contrast-color(#fff, #666666);
   font-size: 1.2rem;
 }
 
@@ -548,7 +589,7 @@ samp {
 
 code {
   background: #f9f2f4;
-  color: #9c1d3d;
+  color: amplify(#c7254e, 10%);
   padding: 0.2rem 0.4rem;
   border-radius: 3px;
 }
@@ -593,7 +634,7 @@ hr {
 }
 
 .scrollbar-inner > .scroll-element .scroll-bar {
-  background-color: #b5d1eb;
+  background-color: amplify(#A1C4E5, 5%);
 }
 
 .scrollbar-inner > .scroll-element:hover .scroll-bar {
@@ -620,31 +661,37 @@ td {
 }
 
 .button {
-  background: #1694CA;
-  color: #fff;
-  box-shadow: 0 3px 0 #1380ae;
+  background: #1694CA !important;
+  color: maximize-color-contrast(#1694CA) !important;
+  box-shadow: 0 3px 0 amplify(#1694CA, 6%) !important;
 }
 .button:hover {
-  background: #1380ae;
-  box-shadow: 0 3px 0 #106c93;
-  color: #fff;
+  background: amplify(#1694CA, 6%) !important;
+  box-shadow: 0 3px 0 amplify(#1694CA, 12%) !important;
+  color: maximize-color-contrast(#1694CA) !important;
 }
 .button:active {
-  box-shadow: 0 1px 0 #106c93;
+  box-shadow: 0 1px 0 amplify(#1694CA, 12%) !important;
+}
+.button i {
+  color: maximize-color-contrast(#1694CA) !important;
 }
 
 .button-secondary {
-  background: #F8B450;
-  color: #fff;
-  box-shadow: 0 3px 0 #f7a733;
+  background: #F8B450 !important;
+  color: maximize-color-contrast(#F8B450) !important;
+  box-shadow: 0 3px 0 amplify(#F8B450, 6%) !important;
 }
 .button-secondary:hover {
-  background: #f7a733;
-  box-shadow: 0 3px 0 #f69b15;
-  color: #fff;
+  background: amplify(#F8B450, 6%) !important;
+  box-shadow: 0 3px 0 amplify(#F8B450, 12%) !important;
+  color: maximize-color-contrast(#F8B450) !important;
 }
 .button-secondary:active {
-  box-shadow: 0 1px 0 #f69b15;
+  box-shadow: 0 1px 0 amplify(#F8B450, 12%) !important;
+}
+.button-secondary i {
+  color: maximize-color-contrast(#F8B450) !important;
 }
 
 .bullets {
@@ -1077,6 +1124,13 @@ td {
   padding: 0 1rem;
   height: 0;
   min-height: 3rem;
+  color: diminish(maximize-color-contrast(#F6F6F6), 20%);
+}
+#top-bar a {
+  color: diminish(maximize-color-contrast(#F6F6F6), 10%);
+}
+#top-bar a:hover {
+  color: diminish(maximize-color-contrast(#F6F6F6), 5%);
 }
 
 #top-github-link {
@@ -1174,55 +1228,6 @@ pre .copy-to-clipboard:hover {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
-}
-
-#body .post > h3,
-#body .post .metadata * {
-  margin: 0;
-  padding: 0;
-}
-#body .post .metadata {
-  border: 1px solid silver;
-  border-width: 2px 0;
-}
-#body .post .metadata p {
-  display: inline-block;
-  font-weight: 900;
-}
-#body .post .metadata p.date {
-  float: right;
-}
-
-#sidebar #header h1#navbar_title {
-  line-height: 1;
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-#footer .button {
-  background: #1694CA;
-  color: #fff;
-  box-shadow: 2px 2px 3px #000000;
-  border-radius: 5px;
-  margin: 0 3px 3px 0;
-}
-#footer .button:hover {
-  border-color: #c4c4c4;
-  background-color: #4e7e92;
-  box-shadow: 2px 2px 3px black;
-}
-#footer .button:active {
-  margin: 3px 0 0 3px;
-  box-shadow: inset 2px 2px 3px black;
-}
-
-.searchbox button {
-  position: absolute;
-  right: 0.1em;
-  background: transparent;
-}
-.searchbox button i {
-  color: #aaa;
 }
 
 /*# sourceMappingURL=theme.css.map */

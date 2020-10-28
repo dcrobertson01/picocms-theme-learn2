@@ -1,7 +1,7 @@
 api_version: 3                  # Use Pico's latest API version for themes
 
 meta:                           # Register meta headers used by this theme
-    Logo: logo                  # The URL to your website's logo (value is passed to Pico's "url" Twig filter)
+    Logo: logo   # The URL to your website's logo (value is passed to Pico's "url" Twig filter)
     Tagline: tagline            # Your website's tag line, shown right below your site title (supports Markdown)
     Social: social              # A list of social icons that will be shown in your website's footer;
                                 #     You must specify a "title", "url" and "icon" per entry
@@ -16,11 +16,13 @@ language: en
 stylesheets:
     - font-awesome.min.css
     - pure-0.5.0/grids-min.css
-    - custom.css
-    - breadcrumb.css
-    - form-styles.css
-    - learn.css
-    - featherlight.min.css
+#    - custom.css
+#    - breadcrumb.css
+#    - form-styles.css
+#    - learn.css
+#    - featherlight.min.css
+    - min-width-768.css
+    
 javascripts:
     - jquery/jquery-2.x.min.js
     - clipboard.min.js

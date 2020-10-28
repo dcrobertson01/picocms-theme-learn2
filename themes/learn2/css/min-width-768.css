@@ -1,0 +1,20 @@
+@media only screen and (min-width: 768px) {
+/*    body {
+      background-color: lightblue;
+    }
+
+    .post  .metadata * {
+        display: inline-block;
+        font-weight: 900;
+    }
+    
+    
+    .post  .date,
+    .post  .date {
+        float: right;
+    }
+    */
+    .off-canvas-toggle {
+        display:none;
+    }
+  }

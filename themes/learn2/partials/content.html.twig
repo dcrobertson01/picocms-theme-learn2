@@ -6,14 +6,16 @@
 <section id="body" class="{{meta.template}}">
     <div class="padding highlightable">
         {% block content %}
-            {% if template == "blog" %}
-                {% include "partials/content.blog.html.twig" %}
+            {% if template == "index" %}
+                {% include "partials/content.index.html.twig" %}
+            {% elseif template == "blog-index" %}
+                {% include "partials/content.blog-index.html.twig" %}
             {% elseif template == "blog-item" %}
                 {% include "partials/content.blog-item.html.twig" %}
-            {% elseif template == "doc" %}
-                {% include "partials/content.doc.html.twig" %}
-            {% elseif template == "chapter" %}
-                {% include "partials/content.chapter.html.twig" %}
+            {% elseif template == "doc-index" %}
+                {% include "partials/content.doc-index.html.twig" %}
+            {% elseif template == "doc-item" %}
+                {% include "partials/content.doc-item.html.twig" %}
             {% elseif template == "search" %}
                 {% include "partials/content.searchresults.html.twig" %}
             {% else %}

@@ -1,15 +1,10 @@
 ---
-Title: Server Notes
+Title: Learn2 For PicoCMS
+Description: Learn2 is a documentation theme for PicoCMS. It is being developed for use with NextCloud
+Author: Don Robertson   
+Date: 2020-10-21
+Robots: noindex,nofollow
+Template: 
 ---
-
-A place to keep server notes. Yes, I know if the server is down I cannot get to my notes, but they should also be synced to my laptop and desktop machines.
-
-## [Dynamic DNS](Dynamic%20DNS)
-
-* Script is at /usr/home/bin/duck.sh
-* log is at /var/log/duckdns/
-
-## [Active Directory](Active%20Directory)
-* sssd.conf
-
-herllo
+# %meta.title%
+%meta.description%

@@ -1,0 +1,14 @@
+{{ content }}
+
+{% for page in pages("blog")|sort_by("time")|reverse if not page.hidden %}
+    <div class="post">
+        <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+        <div class="metadata">
+            <p class="author">{{ page.author }}</p>
+            <p class="date">{{ page.date_formatted }} </p>
+        </div>
+        <p class="excerpt">{{ page.description }}</p>
+    </div>
+
+
+{% endfor %}

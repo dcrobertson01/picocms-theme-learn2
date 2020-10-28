@@ -1,9 +1,26 @@
-theme: learn2
-content_dir: learn2
-site_title: Learn2 Theme ported to Pico 
-content_config:
-    extra: true
+##
+# Basic
+#
+site_title: Learn 2                    # The title of your website
 
-date_format: %A, %B %e %Y
-description: New theme for PicoCMS - made for cms_pico
-logo: logo.svg
+##
+# Theme
+#
+theme: learn2                      # The name of your custom theme
+content_dir: learn2                # The path to Pico's content directory
+content_ext: .md                    # The file extension of your Markdown files
+date_format: %A %e %B, %Y
+
+#pages_order_by_meta: date         # Sort pages by meta value "author" (set "pages_order_by" to "meta")
+pages_order_by: alpha               # Change how Pico sorts pages ("alpha" for alphabetical order, "date", or "meta")
+pages_order: asc                    # Sort pages in ascending ("asc") or descending ("desc") order
+
+##
+# Search
+#
+search_excludes: 
+    - search
+    - index
+    - feed
+    - _meta
+

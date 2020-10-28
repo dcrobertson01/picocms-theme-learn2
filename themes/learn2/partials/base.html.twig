@@ -4,8 +4,10 @@
     {% include 'partials/head.html.twig' %}
 </head>
     <body data-url="{{ current_page.url }}" class="{{ meta.template }}">
+
     {% block nav %}
         {% include 'partials/nav.html.twig' %}
+
     {% endblock %}
-    {% include 'partials/content.html.twig' %}
+       {% include 'partials/content.html.twig' %}
 </body>
