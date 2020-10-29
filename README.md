@@ -8,7 +8,9 @@ The **Learn2** theme for **[GravCMS](https://getgrav.org)** is designed for docu
 This is a very early version of the theme, and there is still a fair bit to be done. It will be on hold for a bit. 
 
 **Warning**
+
 ~~Search and the site feeds do not work.~~ And possibly other plugins.
+Search and atom feeds now work.
 
 ## [Installation](https://cloud.robertson.net.nz/index.php/apps/cms_pico/pico/learn2/docs/installation)
 
