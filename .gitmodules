@@ -1,0 +1,3 @@
+[submodule "themes/learn2"]
+	path = themes/learn2
+	url = git@github.com:dcrobertson01/picocms_learn2.git
