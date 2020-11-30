@@ -7,7 +7,7 @@ site_title: Learn 2                    # The title of your website
 # Theme
 #
 theme: learn2                      # The name of your custom theme
-content_dir: learn2                # The path to Pico's content directory
+content_dir: learn2_docs                # The path to Pico's content directory
 content_ext: .md                    # The file extension of your Markdown files
 date_format: %A %e %B, %Y
 
