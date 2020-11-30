@@ -12,12 +12,10 @@ desktop.ini
 
 # Composer
 /composer.phar
-themes/bit.code-workspace
 
 # Other stuff
 *.code-workspace
 /content-sample
 /pages
-index.php
 *.backup
 *.bak
