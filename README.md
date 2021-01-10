@@ -1,35 +1,34 @@
+Pico
+====
 
 [![License](https://picocms.github.io/badges/pico-license.svg)](https://github.com/picocms/pico-composer/blob/master/LICENSE)
+[![Version](https://picocms.github.io/badges/pico-version.svg)](https://github.com/picocms/pico-composer#install)
+[![Freenode IRC Webchat](https://picocms.github.io/badges/pico-chat.svg)](https://webchat.freenode.net/?channels=%23picocms)
+[![Open Bounties on Bountysource](https://www.bountysource.com/badge/team?team_id=198139&style=bounties_received)](https://www.bountysource.com/teams/picocms)
 
-## Title: Learn2 Documentation
+Pico is a stupidly simple, blazing fast, flat file CMS.
 
-The **Learn2** theme for **[GravCMS](https://getgrav.org)** is designed for documentation, and is used on the **[Grav Documentation Site](https://learn.getgrav.org)** This is an attempt to port it to **[PicoCMS](http://picocms.org)**, mainly so I can use it with the **[cms_pico](https://github.com/nextcloud/cms_pico)** module for **[Nextcloud](https://www.nextcloud.org)**.
+Visit us at http://picocms.org/ and see http://picocms.org/about/ for more info.
 
-This is a very early version of the theme, and there is still a fair bit to be done. It will be on hold for a bit. 
+This is Pico's [Composer][] starter project. `picocms/pico-composer` is the frame for basically all Pico installations starting with Pico 2.0, but doesn't consist of any considerable code itself. It's main purpose is to simply depend on Pico. Please refer to the ["Install"][MainRepoInstall] and ["Upgrade"][MainRepoUpgrade] sections of our main repository for information about how to install, upgrade and use Pico.
 
-**Warning**
+Screenshot
+----------
 
-~~Search and the site feeds do not work.~~ And possibly other plugins.
-Search and atom feeds now work.
+![Pico Screenshot](https://picocms.github.io/screenshots/pico-21.png)
 
-## [Installation](https://cloud.robertson.net.nz/index.php/apps/cms_pico/pico/learn2/docs/installation)
+Getting Help
+------------
 
-Copy the themes/learn2 directory to the cms_pico themes directory
+Please refer to the ["Getting Help" section][MainRepoGettingHelp] of our main repository.
 
-Copy the Learn2 directory to the cms_pico templates directory
+Contributing
+------------
 
-Copy the contents of the plugins directory to the cms_pico plugins directory
+Please refer to the ["Contributing" section][MainRepoContributing] of our main repository.
 
-Go to the Administration pages for cms_pico in Nextcloud and add the theme,  templates, and plugins to cms_pico.
-
-Create a new site, using learn2 as your theme.
-
-Might work :-)
-
-## Modifications
-
-Am trying to make it a little more accessible. Eg - remove h5 tags that are being used for formatting rather than as structural elements.
-
-## Credits
-
-The [Learn2 theme for Grav](https://github.com/getgrav/grav-theme-learn2)
+[Composer]: https://getcomposer.org/
+[MainRepoInstall]: https://github.com/picocms/Pico#install
+[MainRepoUpgrade]: https://github.com/picocms/Pico#upgrade
+[MainRepoGettingHelp]: https://github.com/picocms/Pico#getting-help
+[MainRepoContributing]: https://github.com/picocms/Pico#contributing
